@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>TrebaMi.rs - Home</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/shop-homepage.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Kupi jeftino. Prodaj brzo.</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="register.html">Register</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="login.html">Log in</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-lg-3">
+
+        <h1 class="my-4">Treba Mi</h1>
+        <div class="list-group">
+          <h5><a href="#" class="list-group-item" onclick="chooseKategorija('Automobili');">Automobili</a></h5>
+          <h5><a href="#" class="list-group-item" onclick="chooseKategorija('Audio');">Audio</a></h5>
+          <h5><a href="#" class="list-group-item" onclick="chooseKategorija('TV i Video');">TV i Video</a></h5>
+          <h5><a href="#" class="list-group-item" onclick="chooseKategorija('Bela tehnika i kucni aparati');">Bela tehnika i kucni aparati</a></h5>
+          <h5><a href="#" class="list-group-item" onclick="chooseKategorija('Foto');">Foto</a></h5>
+          <h5><a href="#" class="list-group-item" onclick="chooseKategorija('Knjige');">Knjige</a></h5>
+          <h5><a href="#" class="list-group-item" onclick="chooseKategorija('Mobilni telefoni');">Mobilni telefoni</a></h5>
+          <h5><a href="#" class="list-group-item" onclick="chooseKategorija('Konzole i igrice');">Konzole i igrice</a></h5>
+          <h5><a href="#" class="list-group-item" onclick="chooseKategorija('Kucni ljubimci');">Kucni ljubimci</a></h5>
+          <h5><a href="#" class="list-group-item" onclick="chooseKategorija('Obuca');">Obuca</a></h5>
+          <h5><a href="#" class="list-group-item" onclick="chooseKategorija('Odeca');">Odeca</a></h5>
+          <h5><a href="#" class="list-group-item" onclick="chooseKategorija('Namestaj');">Namestaj</a></h5>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block" onclick="initHome();">prikazi sve</button>
+        <button type="submit" class="btn btn-primary btn-block" onclick="sortCenaRastuce();">cena rastuce</button>
+        <button type="submit" class="btn btn-primary btn-block" onclick="sortCenaOpadajuce();">cena opadajuce</button>
+        <button type="submit" class="btn btn-primary btn-block" onclick="sortNazivRastuce();">A-Z</button>
+        <button type="submit" class="btn btn-primary btn-block" onclick="sortNazivOpadajuce();">Z-A</button>
+        <br>
+        <div id="dodavanje">
+          <div >
+            <input id="idLbl" class="form-control" placeholder="ID" type="text" readonly>
+            <input id="addNaziv" class="form-control" placeholder="Naziv" type="text">
+            <input id="addCena" class="form-control" placeholder="Cena" type="number">
+            <input id="addKategorija" class="form-control" placeholder="Kategorija" type="text">
+            <input id="addOpis" class="form-control" placeholder="Opis" type="text">
+            <input id="addStanje" class="form-control" placeholder="Stanje" type="text">
+            <input id="addSlika" class="form-control" placeholder="Slika" type="text">
+          </div>
+          <br>
+          <div>
+            <button  type="submit" class="btn btn-primary btn-block" onclick="addOgl()">add</button>
+            <button  type="submit" class="btn btn-primary btn-block" id="edit_pressed">edit</button>
+          </div>
+          <br>
+        </div>
+        
+      </div>
+      <!-- /.col-lg-3 -->
+
+      <div class="col-lg-9">
+
+        <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+              <img class="d-block img-fluid" src="images/BIG airmax plus tn.jfif" alt="First slide">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block img-fluid" src="images/BIG audi a6.jfif" alt="Second slide">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block img-fluid" src="images/BIG iphone 11.jfif" alt="Third slide">
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+
+        <div  class="row" id="oglasi"> </div>
+
+        <!-- /.row -->
+
+      </div>
+      <!-- /.col-lg-9 -->
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; TrebaMi.rs 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <script src="api.js"></script>
+  <script src="oglasi.js"></script>
+  
+  
+  <script src="edit_oglas.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
